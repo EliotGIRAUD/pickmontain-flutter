@@ -1,9 +1,9 @@
 require("dotenv").config();
 const app = require("./app");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const sequelize = require("./config/database");
 
-// Vérifiez la connexion à la base de données
+// Check the connection to the database
 sequelize
   .authenticate()
   .then(() => {
@@ -15,13 +15,13 @@ sequelize
     console.error("Unable to connect to the database:", err);
   });
 
-// Synchronisation de la base de données si SYNC_DB est défini à true
+// Synchronize the database if SYNC_DB is set to true
 if (process.env.SYNC_DB === "true") {
   sequelize
     .sync({ alter: true })
     .then(() => {
       console.log("Database synced");
-      // Lancement du serveur
+      // Start the server
       app.listen(port, () => {
         console.log(`Server is running at http://localhost:${port}`);
       });
@@ -30,7 +30,7 @@ if (process.env.SYNC_DB === "true") {
       console.error("Error syncing database:", err);
     });
 } else {
-  // Lancement du serveur sans synchronisation de la base de données
+  // Start the server without synchronizing the database
   app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
   });

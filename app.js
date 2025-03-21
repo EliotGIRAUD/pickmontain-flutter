@@ -1,13 +1,14 @@
-const express = require("express");
+const express = require("express"); 
+const dotenv = require("dotenv");
+const authRoutes = require("./routes/auth");
+
+dotenv.config();
 const app = express();
+
+// Middleware pour parser le JSON
 app.use(express.json());
 
-// Importation des routes
-const indexRouter = require("./routes/index");
-const authRouter = require("./routes/auth");
+// Routes d'authentification
+app.use("/api/auth", authRoutes);
 
-// Utilisation des routes avec le préfixe /api
-app.use("/api", indexRouter);
-app.use("/api", authRouter);
-
-module.exports = app;
+module.exports = app; // 🚀 On exporte uniquement l'application sans démarrer le serveur
