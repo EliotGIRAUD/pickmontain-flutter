@@ -22,7 +22,7 @@ const User = sequelize.define("User", {
   }
 });
 
-// Méthode pour vérifier le mot de passe
+// Method to verify the password
 User.prototype.comparePassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
