@@ -1,6 +1,9 @@
 const express = require("express");
+const authMiddleware = require("../middlewares/authMiddleware");
 const Mountain = require("../models/Montain");
 const router = express.Router();
+
+router.use(authMiddleware);
 
 // 1. Create a new Mountain
 router.post("/", async (req, res) => {
