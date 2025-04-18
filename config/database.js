@@ -1,10 +1,10 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize(process.env.DB_URI, {
-  dialect: 'mysql',
-  logging: false,
-});
+const sequelize = new Sequelize(
+  process.env.DB_URI
+);
+
 // Test de connexion
 (async () => {
   try {
