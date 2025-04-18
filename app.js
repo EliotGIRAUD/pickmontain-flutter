@@ -1,14 +1,17 @@
 const express = require("express"); 
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/auth");
-
+const mountainRoutes = require("./routes/montain");
 dotenv.config();
 const app = express();
 
-// Middleware pour parser le JSON
+// Middleware to parse JSON
 app.use(express.json());
 
-// Routes d'authentification
+// Authentication routes
 app.use("/api/auth", authRoutes);
 
-module.exports = app; // 🚀 On exporte uniquement l'application sans démarrer le serveur
+// Routes to manage mountains
+app.use("/api/mountains", mountainRoutes); // New route
+
+module.exports = app; // Exporting the app without starting the server
