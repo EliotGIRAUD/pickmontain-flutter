@@ -17,9 +17,9 @@ API RESTful pour l'application **PickMountain**, une plateforme pour explorer et
 ## 🛠️ Stack technique
 
 - **Node.js / Express**
-- **PostgreSQL** (via [Aiven.io](https://aiven.io/))
+- **MySQL** (via [Aiven.io](https://aiven.io/))
 - **JWT** pour la sécurité
-- **Render.com** pour l’hébergement
+- **Render.com** pour l’hébergement back-end
 - **GitHub Actions** pour le déploiement continu
 
 ---
