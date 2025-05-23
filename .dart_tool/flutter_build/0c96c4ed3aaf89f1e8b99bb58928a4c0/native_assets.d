@@ -1,0 +1,1 @@
+ C:\\Users\\eliot\\StudioProjects\\pickmontain\\.dart_tool\\flutter_build\\0c96c4ed3aaf89f1e8b99bb58928a4c0\\native_assets.yaml: 
